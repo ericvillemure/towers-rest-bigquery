@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3001
+const port = process.env.PORT
 
 const { BigQuery } = require('@google-cloud/bigquery');
 const options = {
