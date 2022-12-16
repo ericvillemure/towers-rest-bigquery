@@ -3,11 +3,12 @@ const app = express()
 const port = process.env.PORT
 
 const { BigQuery } = require('@google-cloud/bigquery');
-const options = {
-    keyFilename: 'service_account.json',
-    projectId: 'cell-towers-9c6c2',
-};
-const bigquery = new BigQuery(options);
+// const options = {
+//     keyFilename: 'service_account.json',
+//     projectId: 'cell-towers-9c6c2',
+// };
+// const bigquery = new BigQuery(options);
+const bigquery = new BigQuery();
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
