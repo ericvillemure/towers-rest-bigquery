@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT
 
-// const { BigQuery } = require('@google-cloud/bigquery');
+const { BigQuery } = require('@google-cloud/bigquery');
 // const bqOptions = {
 //     keyFilename: 'service_account.json',
 //     projectId: 'cell-towers-9c6c2',
