@@ -2,12 +2,12 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT
 
-const { BigQuery } = require('@google-cloud/bigquery');
-// const options = {
+// const { BigQuery } = require('@google-cloud/bigquery');
+// const bqOptions = {
 //     keyFilename: 'service_account.json',
 //     projectId: 'cell-towers-9c6c2',
 // };
-// const bigquery = new BigQuery(options);
+// const bigquery = new BigQuery(bqOptions);
 const bigquery = new BigQuery();
 
 app.get('/', (req, res) => {
@@ -24,7 +24,7 @@ app.get('/api/coordinates', async (req, res) => {
 
     // Queries the U.S. given names dataset for the state of Texas.
 
-    const query = `SELECT LATITUDE,LONGITUDE,LICENSEE,TX_PWR,TRANSMIT_BW,TRANSMIT_FREQ,SITE_ELEV,TX_ANT_AZIM FROM \`cell-towers-9c6c2.cell_towers_october_2022.towers\` where 
+    const query = `SELECT LATITUDE,LONGITUDE,LICENSEE,TX_PWR,TRANSMIT_BW,TRANSMIT_FREQ,SITE_ELEV,TX_ANT_AZIM FROM \`cell-towers-9c6c2.cell_towers_february_2023.towers\` where 
         LATITUDE <= ${n} AND LATITUDE >= ${s} AND 
         LONGITUDE <= ${e} AND LONGITUDE >= ${w}`;
 
